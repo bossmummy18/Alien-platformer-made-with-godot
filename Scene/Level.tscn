@@ -1,0 +1,464 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://Sprite/Player/walk/p1_walk04.png" type="Texture" id=1]
+[ext_resource path="res://Sprite/Player/alienGreen_stand.png" type="Texture" id=2]
+[ext_resource path="res://Sprite/Player/walk/p1_walk03.png" type="Texture" id=3]
+[ext_resource path="res://Sprite/Player/walk/p1_walk06.png" type="Texture" id=4]
+[ext_resource path="res://Sprite/Tile/grassMid.png" type="Texture" id=5]
+[ext_resource path="res://Sprite/Tile/flagBlue2.png" type="Texture" id=6]
+[ext_resource path="res://Script/Player.gd" type="Script" id=7]
+[ext_resource path="res://Sprite/Player/walk/p1_walk05.png" type="Texture" id=8]
+[ext_resource path="res://Sprite/Player/p1_jump.png" type="Texture" id=9]
+[ext_resource path="res://Sprite/Player/walk/p1_walk07.png" type="Texture" id=10]
+[ext_resource path="res://Script/Level.gd" type="Script" id=11]
+[ext_resource path="res://Sprite/Tile/brickWall.png" type="Texture" id=12]
+[ext_resource path="res://Sprite/Tile/grass.png" type="Texture" id=13]
+[ext_resource path="res://Sprite/Tile/bridgeLogs.png" type="Texture" id=14]
+[ext_resource path="res://Scene/Bridge.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sprite/Tile/ladder_top.png" type="Texture" id=16]
+[ext_resource path="res://Sprite/Tile/ladder_mid.png" type="Texture" id=17]
+[ext_resource path="res://Sprite/Player/alienGreen_climb2.png" type="Texture" id=18]
+[ext_resource path="res://Sprite/Player/alienGreen_climb1.png" type="Texture" id=19]
+[ext_resource path="res://Scene/Slime.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Sprite/backgroundColorForest.png" type="Texture" id=21]
+[ext_resource path="res://Sprite/Player/p1_hurt.png" type="Texture" id=22]
+[ext_resource path="res://Sprite/Enemy/pokerMad.png" type="Texture" id=23]
+[ext_resource path="res://Sprite/Ui/hud_coins.png" type="Texture" id=24]
+[ext_resource path="res://Sprite/Ui/hud_heartFull.png" type="Texture" id=25]
+[ext_resource path="res://Font/comic.ttf" type="DynamicFontData" id=26]
+[ext_resource path="res://Scene/Coin.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Sprite/Tile/flagBlue.png" type="Texture" id=28]
+[ext_resource path="res://Script/Paue_system.gd" type="Script" id=29]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "grassMid.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 70, 70 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+2/name = "brickWall.png 2"
+2/texture = ExtResource( 12 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 70, 70 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 2 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "grass.png 3"
+3/texture = ExtResource( 13 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 70, 70 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 3 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "bridgeLogs.png 4"
+4/texture = ExtResource( 14 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 44, 70, 26 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "ladder_mid.png 5"
+5/texture = ExtResource( 17 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 70, 70 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "ladder_top.png 6"
+6/texture = ExtResource( 16 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 70, 70 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/bridge.png-bb1e8a4ccb8835cdb984500a7e9183aa.stex"
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 35.051, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 35.051, 10 )
+
+[sub_resource type="Animation" id=8]
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bridge_Anim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2736, 157 ), Vector2( 3160, 157 ), Vector2( 2736, 157 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 35, 175 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 33.6525, 46.5497 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "climb",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+font_data = ExtResource( 26 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.5
+} ]
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 33.75, 35.25 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="Background" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxLayer"]
+position = Vector2( 512, 331 )
+texture = ExtResource( 21 )
+
+[node name="TileMaps" type="Node" parent="."]
+
+[node name="TileMap" type="TileMap" parent="TileMaps"]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 70, 70 )
+format = 1
+tile_data = PoolIntArray( 131108, 2, 0, 131109, 2, 0, 131119, 6, 0, 131138, 2, 0, 131139, 2, 0, 131140, 2, 0, 131152, 2, 0, 131153, 6, 0, 262137, 2, 0, 262138, 2, 0, 262139, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 196641, 4, 0, 196655, 5, 0, 196656, 3, 0, 196679, 4, 0, 196680, 4, 0, 196687, 2, 0, 196688, 2, 0, 196689, 5, 0, 196699, 2, 0, 196700, 2, 0, 196701, 2, 0, 196702, 2, 0, 196703, 2, 0, 196704, 2, 0, 327673, 2, 0, 327674, 2, 0, 327675, 2, 0, 327676, 2, 0, 327677, 2, 0, 327678, 2, 0, 262174, 4, 0, 262191, 5, 0, 262192, 2, 0, 262193, 3, 0, 262222, 2, 0, 262223, 2, 0, 262224, 2, 0, 262225, 5, 0, 262235, 2, 0, 262236, 2, 0, 262237, 2, 0, 262238, 2, 0, 262239, 2, 0, 262240, 2, 0, 393209, 2, 0, 393210, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 327707, 4, 0, 327727, 5, 0, 327728, 2, 0, 327729, 2, 0, 327730, 3, 0, 327744, 3, 0, 327757, 2, 0, 327758, 2, 0, 327759, 2, 0, 327760, 2, 0, 327761, 5, 0, 327771, 2, 0, 327772, 2, 0, 327773, 2, 0, 327774, 2, 0, 327775, 2, 0, 327776, 2, 0, 458745, 2, 0, 458746, 2, 0, 458747, 2, 0, 458748, 2, 0, 458749, 2, 0, 458750, 2, 0, 393231, 3, 0, 393240, 3, 0, 393263, 5, 0, 393264, 2, 0, 393265, 2, 0, 393266, 2, 0, 393267, 3, 0, 393279, 3, 0, 393280, 2, 0, 393292, 2, 0, 393293, 2, 0, 393294, 2, 0, 393295, 2, 0, 393296, 2, 0, 393297, 5, 0, 393307, 2, 0, 393308, 2, 0, 393309, 2, 0, 393310, 2, 0, 393311, 2, 0, 393312, 2, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 458796, 0, 0, 458797, 0, 0, 458798, 0, 0, 458799, 0, 0, 458800, 0, 0, 458801, 0, 0, 458802, 0, 0, 458803, 0, 0, 458804, 0, 0, 458805, 0, 0, 458806, 0, 0, 458807, 0, 0, 458808, 0, 0, 458809, 0, 0, 458810, 0, 0, 458811, 0, 0, 458812, 0, 0, 458813, 0, 0, 458814, 0, 0, 458815, 0, 0, 458816, 0, 0, 458817, 0, 0, 458818, 0, 0, 458819, 0, 0, 458820, 0, 0, 458821, 0, 0, 458822, 0, 0, 458823, 0, 0, 458824, 0, 0, 458825, 0, 0, 458826, 0, 0, 458827, 0, 0, 458828, 0, 0, 458829, 0, 0, 458830, 0, 0, 458831, 0, 0, 458832, 0, 0, 458833, 0, 0, 458834, 0, 0, 458835, 0, 0, 458836, 0, 0, 458837, 0, 0, 458838, 0, 0, 458839, 0, 0, 458840, 0, 0, 458841, 0, 0, 458842, 0, 0, 458843, 0, 0, 458844, 0, 0, 458845, 0, 0, 458846, 0, 0, 458847, 0, 0, 458848, 0, 0, 458849, 0, 0, 458850, 0, 0 )
+
+[node name="BridgeMap" type="Node" parent="TileMaps"]
+
+[node name="Bridge_Anim" type="Node" parent="TileMaps/BridgeMap"]
+
+[node name="Bridge_Anim" type="StaticBody2D" parent="TileMaps/BridgeMap/Bridge_Anim"]
+position = Vector2( 2736, 157 )
+
+[node name="Sprite" type="Sprite" parent="TileMaps/BridgeMap/Bridge_Anim/Bridge_Anim"]
+texture = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMaps/BridgeMap/Bridge_Anim/Bridge_Anim"]
+position = Vector2( 0, 24.9 )
+shape = SubResource( 6 )
+one_way_collision = true
+
+[node name="Bridge_Area" type="Area2D" parent="TileMaps/BridgeMap/Bridge_Anim/Bridge_Anim"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMaps/BridgeMap/Bridge_Anim/Bridge_Anim/Bridge_Area"]
+position = Vector2( 0, 5 )
+shape = SubResource( 7 )
+
+[node name="Timer" type="Timer" parent="TileMaps/BridgeMap/Bridge_Anim/Bridge_Anim"]
+wait_time = 2.5
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TileMaps/BridgeMap/Bridge_Anim"]
+autoplay = "Bridge_move"
+anims/Bridge_move = SubResource( 8 )
+
+[node name="Bridge_1" parent="TileMaps/BridgeMap" instance=ExtResource( 15 )]
+position = Vector2( 1925, 340.5 )
+
+[node name="Bridge_2" parent="TileMaps/BridgeMap" instance=ExtResource( 15 )]
+position = Vector2( 2135, 270.5 )
+
+[node name="Bridge_3" parent="TileMaps/BridgeMap" instance=ExtResource( 15 )]
+position = Vector2( 2345, 200.5 )
+
+[node name="Bridge_4" parent="TileMaps/BridgeMap" instance=ExtResource( 15 )]
+position = Vector2( 5005, 201 )
+
+[node name="Bridge_5" parent="TileMaps/BridgeMap" instance=ExtResource( 15 )]
+position = Vector2( 5075, 201 )
+
+[node name="Ladder" type="Area2D" parent="TileMaps"]
+position = Vector2( 3325, 303 )
+z_index = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMaps/Ladder"]
+position = Vector2( 0, 12 )
+shape = SubResource( 9 )
+
+[node name="Ladder2" type="Area2D" parent="TileMaps"]
+position = Vector2( 5706, 303 )
+z_index = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMaps/Ladder2"]
+position = Vector2( 0, 12 )
+shape = SubResource( 9 )
+
+[node name="Coin" type="Node" parent="."]
+
+[node name="Coin" parent="Coin" instance=ExtResource( 27 )]
+position = Vector2( 1925, 321 )
+
+[node name="Coin2" parent="Coin" instance=ExtResource( 27 )]
+position = Vector2( 2135, 251 )
+
+[node name="Coin3" parent="Coin" instance=ExtResource( 27 )]
+position = Vector2( 2345, 181 )
+
+[node name="Coin4" parent="Coin" instance=ExtResource( 27 )]
+position = Vector2( 2555, 111 )
+
+[node name="Coin5" parent="Coin" instance=ExtResource( 27 )]
+position = Vector2( 2624, 111 )
+
+[node name="Coin6" parent="Coin" instance=ExtResource( 27 )]
+position = Vector2( 4655, 111 )
+
+[node name="Coin7" parent="Coin" instance=ExtResource( 27 )]
+position = Vector2( 4724, 111 )
+
+[node name="Coin8" parent="Coin" instance=ExtResource( 27 )]
+position = Vector2( 4793, 111 )
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="Slime" parent="Enemy" instance=ExtResource( 20 )]
+position = Vector2( 1434, 477 )
+
+[node name="Slime3" parent="Enemy" instance=ExtResource( 20 )]
+position = Vector2( 4714, 477 )
+
+[node name="Slime4" parent="Enemy" instance=ExtResource( 20 )]
+position = Vector2( 5154, 477 )
+
+[node name="Slime5" parent="Enemy" instance=ExtResource( 20 )]
+position = Vector2( 1986, 477 )
+
+[node name="Slime6" parent="Enemy" instance=ExtResource( 20 )]
+position = Vector2( 2442, 477 )
+
+[node name="Slime7" parent="Enemy" instance=ExtResource( 20 )]
+position = Vector2( 2994, 477 )
+
+[node name="Damage" type="Area2D" parent="Enemy"]
+position = Vector2( 4026, 491 )
+
+[node name="Sprite" type="Sprite" parent="Enemy/Damage"]
+position = Vector2( 0, -74 )
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Enemy/Damage"]
+position = Vector2( 11.1, 4.3875 )
+scale = Vector2( 1.75, 8.3125 )
+polygon = PoolVector2Array( -20.0705, -0.638086, -19.7713, -16.1519, -16.1882, -17.3982, -11.8428, -18.0767, -6.08664, -18.2701, 0.514368, -17.9414, 4.41894, -17.1855, 6.94294, -16.1068, 7.43066, -0.648707 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 512, 300 )
+z_index = 1
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.5, 0.5 )
+shape = SubResource( 10 )
+
+[node name="Player_Anim" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 11 )
+animation = "idle"
+
+[node name="Player_climb" type="AnimatedSprite" parent="Player"]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 12 )
+animation = "climb"
+playing = true
+
+[node name="Damage_Check" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Damage_Check"]
+position = Vector2( 0.5, 0.5 )
+shape = SubResource( 10 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 512, 228 )
+current = true
+
+[node name="Coin" type="Sprite" parent="Camera"]
+position = Vector2( -479, -268 )
+texture = ExtResource( 24 )
+
+[node name="Coin_Label" type="Label" parent="Camera/Coin"]
+margin_left = 38.0
+margin_top = -36.0
+margin_right = 62.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 13 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heart" type="Sprite" parent="Camera"]
+position = Vector2( -477.5, -216 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 25 )
+
+[node name="Heart_Label" type="Label" parent="Camera/Heart"]
+margin_left = 41.0
+margin_top = -38.0
+margin_right = 65.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 13 )
+text = "3"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paue_system" type="Node2D" parent="Camera"]
+pause_mode = 2
+visible = false
+z_index = 1
+script = ExtResource( 29 )
+
+[node name="ColorRect" type="ColorRect" parent="Camera/Paue_system"]
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0.113725, 0.113725, 0.113725, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win_Area" type="Area2D" parent="."]
+position = Vector2( 6232, 455 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Win_Area"]
+frames = SubResource( 14 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win_Area"]
+position = Vector2( -2, 0 )
+shape = SubResource( 15 )
+
+[connection signal="body_entered" from="TileMaps/BridgeMap/Bridge_Anim/Bridge_Anim/Bridge_Area" to="." method="_on_Bridge_Area_body_entered"]
+[connection signal="body_exited" from="TileMaps/BridgeMap/Bridge_Anim/Bridge_Anim/Bridge_Area" to="." method="_on_Bridge_Area_body_exited"]
+[connection signal="timeout" from="TileMaps/BridgeMap/Bridge_Anim/Bridge_Anim/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="TileMaps/Ladder" to="." method="_on_Ladder_body_entered"]
+[connection signal="body_exited" from="TileMaps/Ladder" to="." method="_on_Ladder_body_exited"]
+[connection signal="body_entered" from="TileMaps/Ladder2" to="." method="_on_Ladder_body_entered"]
+[connection signal="body_exited" from="TileMaps/Ladder2" to="." method="_on_Ladder_body_exited"]
+[connection signal="area_entered" from="Player/Damage_Check" to="Player" method="_on_Damage_Check_area_entered"]
+[connection signal="body_entered" from="Win_Area" to="." method="_on_Win_Area_body_entered"]
